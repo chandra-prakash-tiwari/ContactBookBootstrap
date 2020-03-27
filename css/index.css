@@ -47,12 +47,15 @@ h6 {
 .display-all {
     border: 1px solid #dddddd;
     background-color: white;
+    padding: 2%;
+    font-family: 'Open Sans', sans-serif;
     padding: 1px;
 }
 
 .display-details {
     width: 45%;
     padding: 3% 1%;
+    font-family: 'Open Sans', sans-serif;
 }
 
 h4 {
@@ -67,4 +70,8 @@ h4 {
 
 .edit {
     height: 19px;
+}
+
+input{
+    border: 5px solid #111111;
 }

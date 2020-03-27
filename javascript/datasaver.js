@@ -45,12 +45,12 @@ function displaycontactdetail(id) {
     var deletecontact = document.createElement("div");
     deletecontact.className = "modify-or-delete";
     $(deletecontact).append("<img class='delete' src='../img/delete2.png'/>");
-    $(deletecontact).append('<a onclick="deleteContact(\'' + contactDetails.email + '\')">Delete</a>');
+    $(deletecontact).append('<a onclick="deleteContact(\'' + contactDetails.email + '\')">DELETE</a>');
     var editcontact = document.createElement("div");
     editcontact.className = "modify-or-delete";
     $(editcontact).append("<img class='edit' src='../img/edit1.jpg'/>");
-    $(editcontact).append('<a onclick="edit(\'' + contactDetails.email + '\')">Edit</a>');
-    $(childdiv).append($("<h4></h4>").text(contactDetails.name.toUpperCase()), deletecontact, editcontact);
+    $(editcontact).append('<a onclick="edit(\'' + contactDetails.email + '\')">EDIT</a>');
+    $(childdiv).append($("<h4></h4>").text(contactDetails.name), deletecontact, editcontact);
     $(parentdiv).append(childdiv, $("<p></p>").text("Email : " + contactDetails.email),
         $("<p></p>").text("Mobile : " + contactDetails.mobile),
         $("<p></p>").text("Landline : " + contactDetails.landline),
@@ -71,7 +71,7 @@ $(document).ready(function() {
 });
 
 function edit(contactdetail) {
-    if (confirm("Do you want to delete this contact detail??") == true) {
+    if (confirm("Do you want to update detail??") == true) {
         $("#form").show();
         $("#display-contact").remove();
         var contactDetails = JSON.parse(localStorage.getItem(contactdetail));

@@ -1,17 +1,13 @@
-(function() {
-    'use strict';
-    window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementById('contact-details');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-    form.addEventListener('submit', function(event) {
-    if (form.checkValidity() === false) {
-    event.preventDefault();
-    event.stopPropagation();
-    }
-    form.classList.add('was-validated');
-    }, false);
+$(document).ready(function(){
+    $("#email").blur(function(){
+        emailvalidator();
     });
-    }, false);
-    })();
+});
+
+function emailvalidator(){
+    var email = document.getElementById("email").value;
+    if (localStorage.getItem(email) != null) {
+        alert("Choose another email this is already available");
+        $("#email").val(null);
+    }
+}
